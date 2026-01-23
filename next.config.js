@@ -53,7 +53,17 @@ const nextConfig = {
         hostname: 'feaas*.blob.core.windows.net',
         port: '',
       },
-    ]
+    ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/en-US/:path*',
+        destination: '/en-us/:path*',
+        permanent: true,
+      },
+    ];
   },
 
   async rewrites() {
