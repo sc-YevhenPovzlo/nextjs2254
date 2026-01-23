@@ -63,6 +63,11 @@ const nextConfig = {
         destination: '/en-us/:path*',
         permanent: false,
       },
+      {
+        source: '/en/hey',
+        destination: '/en/page',
+        permanent: false,
+      },
     ];
   },
 
