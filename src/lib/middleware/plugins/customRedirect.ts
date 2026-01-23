@@ -5,13 +5,18 @@ class CustomRedirectPlugin implements MiddlewarePlugin {
   order = -4;
 
   async exec(req: NextRequest): Promise<NextResponse> {
-    const url = req.nextUrl.clone();
-    const locale = url.locale;
-    // Check if the pathname is not already in lowercase
-    if (locale !== locale.toLowerCase()) {
-      // Redirect to the lowercase version of the URL using a 301 permanent redirect
-      return NextResponse.redirect(locale.toLowerCase() + '/' + url.pathname);
+    const url = new URL(req.url);
+    const pathname = url.pathname;
+
+    const segments = pathname.split('/');
+    const locale = segments[1];
+
+    if (locale && locale !== locale.toLowerCase()) {
+      segments[1] = locale.toLowerCase();
+      url.pathname = segments.join('/');
+      return NextResponse.redirect(url, 308);
     }
+
     return NextResponse.next();
   }
 }
