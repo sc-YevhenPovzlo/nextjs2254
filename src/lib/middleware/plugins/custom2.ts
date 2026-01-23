@@ -10,8 +10,9 @@ class CustomPlugin2 implements MiddlewarePlugin {
     // Check if the pathname is not already in lowercase
     if (locale !== locale.toLowerCase()) {
       // Redirect to the lowercase version of the URL using a 301 permanent redirect
-      return NextResponse.redirect(locale.toLowerCase()+'/'+ url.pathname);
+      return NextResponse.redirect(locale.toLowerCase() + '/' + url.pathname);
     }
+    return NextResponse.next();
   }
 }
 export const customPlugin2 = new CustomPlugin2();
