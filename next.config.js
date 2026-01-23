@@ -18,14 +18,7 @@ const nextConfig = {
     PUBLIC_URL: publicUrl,
   },
 
-  i18n: {
-    // These are all the locales you want to support in your application.
-    // These should generally match (or at least be a subset of) those in Sitecore.
-    locales: ['default', 'en', 'en-us'],
-    // This is the locale that will be used when visiting a non-locale
-    // prefixed path e.g. `/styleguide`.
-    defaultLocale: 'default',
-  },
+  i18n: undefined,
 
   // Enable React Strict Mode
   reactStrictMode: true,
