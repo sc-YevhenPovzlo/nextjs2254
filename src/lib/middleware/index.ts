@@ -23,7 +23,7 @@ export default async function middleware(
   debug.common('next middleware start');
 
   const start = Date.now();
-  console.log('middleware index.ts' + req.url)
+  console.log('middleware index.ts' + req.url);
   const finalRes = await (Object.values(plugins) as MiddlewarePlugin[])
     .sort((p1, p2) => p1.order - p2.order)
     .reduce((p, plugin) => p.then((res) => plugin.exec(req, res, ev)), Promise.resolve(response));
