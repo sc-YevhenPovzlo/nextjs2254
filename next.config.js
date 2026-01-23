@@ -18,7 +18,14 @@ const nextConfig = {
     PUBLIC_URL: publicUrl,
   },
 
-  i18n: undefined,
+  i18n: {
+    // These are all the locales you want to support in your application.
+    // These should generally match (or at least be a subset of) those in Sitecore.
+    locales: ['default', 'en', 'en-us'],
+    // This is the locale that will be used when visiting a non-locale
+    // prefixed path e.g. `/styleguide`.
+    defaultLocale: 'default',
+  },
 
   // Enable React Strict Mode
   reactStrictMode: true,
@@ -49,21 +56,7 @@ const nextConfig = {
     ],
   },
 
-  async redirects() {
-    return [
-      // {
-      //   source: '/en-US/:path*',
-      //   destination: '/en-us/:path*',
-      //   permanent: false,
-      //   locale: false
-      // },
-      {
-        source: '/:locale(en-US)/:path*',
-        destination: '/:locale(en-us)/:path*',
-        permanent: true,
-      },
-    ];
-  },
+
 
   async rewrites() {
     // When in connected mode we want to proxy Sitecore paths off to Sitecore
