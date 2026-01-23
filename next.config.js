@@ -65,10 +65,9 @@ const nextConfig = {
       //   locale: false
       // },
       {
-        source: '/:locale(en-US)/abc',
-        destination: '/:locale(en-us)/page',
+        source: '/:locale(en-US)/:path*',
+        destination: '/:locale(en-us)/:path*',
         permanent: true,
-        locale: false,
       },
     ];
   },
