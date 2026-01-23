@@ -59,8 +59,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/en-US/:path*',
-        destination: '/en-us/:path*',
+        source: '/:locale(en-US)/:path*',
+        destination: '/:locale(en-us)/:path*',
         permanent: true,
       },
     ];
