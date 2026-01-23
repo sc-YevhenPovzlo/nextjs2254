@@ -58,11 +58,17 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // {
+      //   source: '/en-US/:path*',
+      //   destination: '/en-us/:path*',
+      //   permanent: false,
+      //   locale: false
+      // },
       {
-        source: '/en-US/:path*',
-        destination: '/en-us/:path*',
-        permanent: false,
-        locale: false
+        source: '/:locale(en-US)/abc',
+        destination: '/:locale(en-us)/page',
+        permanent: true,
+        locale: false,
       },
     ];
   },
