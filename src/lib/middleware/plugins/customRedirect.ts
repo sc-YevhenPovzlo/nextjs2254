@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MiddlewarePlugin } from '..';
 
-class CustomPlugin2 implements MiddlewarePlugin {
+class CustomRedirectPlugin implements MiddlewarePlugin {
   order = -4;
 
   async exec(req: NextRequest): Promise<NextResponse> {
@@ -15,4 +15,4 @@ class CustomPlugin2 implements MiddlewarePlugin {
     return NextResponse.next();
   }
 }
-export const customPlugin2 = new CustomPlugin2();
+export const customRedirectPlugin = new CustomRedirectPlugin();
