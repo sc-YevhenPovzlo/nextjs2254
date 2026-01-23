@@ -62,11 +62,7 @@ const nextConfig = {
         source: '/en-US/:path*',
         destination: '/en-us/:path*',
         permanent: false,
-      },
-      {
-        source: '/en/hey',
-        destination: '/en/page',
-        permanent: false,
+        locale: false
       },
     ];
   },
