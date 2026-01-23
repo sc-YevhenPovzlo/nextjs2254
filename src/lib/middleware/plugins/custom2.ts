@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MiddlewarePlugin } from '..';
 
-class CustomPlugin implements MiddlewarePlugin {
+class CustomPlugin2 implements MiddlewarePlugin {
   order = -4;
 
   async exec(req: NextRequest): Promise<NextResponse> {
@@ -14,4 +14,4 @@ class CustomPlugin implements MiddlewarePlugin {
     }
   }
 }
-export const customPlugin = new CustomPlugin();
+export const customPlugin2 = new CustomPlugin2();
