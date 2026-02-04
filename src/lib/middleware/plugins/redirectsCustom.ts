@@ -6,7 +6,7 @@ import clientFactory from 'lib/graphql-client-factory';
 
 class RedirectsCustomPlugin implements MiddlewarePlugin {
   private redirectsMiddleware: RedirectsMiddleware;
-  order = 0;
+  order = 2;
 
   constructor() {
     this.redirectsMiddleware = new RedirectsMiddleware({
@@ -14,7 +14,7 @@ class RedirectsCustomPlugin implements MiddlewarePlugin {
       clientFactory,
       // These are all the locales you support in your application.
       // These should match those in your next.config.js (i18n.locales).
-      locales: ['en','en-us','default'],
+      locales: ['en', 'en-us', 'default'],
       // This function determines if a route should be excluded from RedirectsMiddleware.
       // Certain paths are ignored by default (e.g. Next.js API routes), but you may wish to exclude more.
       // This is an important performance consideration since Next.js Edge middleware runs on every request.
@@ -33,9 +33,7 @@ class RedirectsCustomPlugin implements MiddlewarePlugin {
    * @returns Promise<NextResponse>
    */
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
-    if (this.redirectsMiddleware.getHandler()(req, res)) console.log('helloWorld2');
-    console.log('helloWorld3');
-    return NextResponse.next();
+    return this.redirectsMiddleware.getHandler()(req, res);
   }
 }
 
