@@ -5,7 +5,7 @@ class CustomPlugin implements MiddlewarePlugin {
   order = -4;
 
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
-    console.log('Run custom middleware:' + req.url);
+    console.log('Run custom middleware:' + req.url + ' ' + res.url);
     return NextResponse.next();
   }
 }
