@@ -37,4 +37,4 @@ class RedirectsCustomPlugin implements MiddlewarePlugin {
   }
 }
 
-export const redirectsPlugin = new RedirectsCustomPlugin();
+export const redirectsCustomPlugin = new RedirectsCustomPlugin();
