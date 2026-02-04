@@ -7,10 +7,7 @@ class CustomPlugin implements MiddlewarePlugin {
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     return async (req: NextRequest, res?: NextResponse) => {
       try {
-        return res || NextResponse.next();
-      } catch (error) {
-        console.log('Custom middleware failed:' + req.url);
-        console.log(error);
+        console.log('Run custom middleware:' + req.url);
         return res || NextResponse.next();
       }
     };
