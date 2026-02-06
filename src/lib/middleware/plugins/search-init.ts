@@ -5,7 +5,7 @@ import { MiddlewarePlugin } from '..';
 // import '@sitecore-cloudsdk/search/server';
 //import config from 'temp/config';
 class SearchInitPlugin implements MiddlewarePlugin {
-  order = 2;
+  order = 5;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     console.log('Run search middleware:' + req.url + ' ' + res?.url);
