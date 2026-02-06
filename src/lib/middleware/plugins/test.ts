@@ -30,4 +30,4 @@ class TestPlugin implements MiddlewarePlugin {
   }
 }
 
-export const test = new TestPlugin();
+export const testPlugin = new TestPlugin();
