@@ -17,7 +17,7 @@ class SearchInitPlugin implements MiddlewarePlugin {
       sitecoreEdgeUrl: config.sitecoreEdgeUrl,
     })
       .addEvents() // Initialize the search package
-      .addSearch()
+      //.addSearch()
       .initialize(); // Run the initialization logic and set cookies
     if (language != 'default') {
       response.headers.set('rssfeed_language', language);
