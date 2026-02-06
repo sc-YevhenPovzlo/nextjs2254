@@ -4,7 +4,7 @@ import { MiddlewarePlugin } from '..';
 // import '@sitecore-cloudsdk/events/server';
 // import '@sitecore-cloudsdk/search/server';
 //import config from 'temp/config';
-class CloudSearchInitPlugin implements MiddlewarePlugin {
+class TestPlugin implements MiddlewarePlugin {
   order = 2;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
@@ -30,4 +30,4 @@ class CloudSearchInitPlugin implements MiddlewarePlugin {
   }
 }
 
-export const cloudsearchInitPlugin = new CloudSearchInitPlugin();
+export const test = new TestPlugin();
