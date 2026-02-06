@@ -6,7 +6,7 @@ class TestPlugin implements MiddlewarePlugin {
 
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     console.log('Run custom middleware:' + req.url + ' ' + res?.url);
-    return res || NextResponse.next();
+    return NextResponse.next();
   }
 }
 
