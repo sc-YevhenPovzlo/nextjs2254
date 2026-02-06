@@ -9,6 +9,7 @@ class SearchInitPlugin implements MiddlewarePlugin {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     console.log('Run search middleware:' + req.url + ' ' + res?.url);
+
     const response = res || NextResponse.next();
     // const language = req.nextUrl.locale;
     // await CloudSDK(req, response, {
