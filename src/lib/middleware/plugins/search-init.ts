@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MiddlewarePlugin } from '..';
 import { CloudSDK } from '@sitecore-cloudsdk/core/server';
-import '@sitecore-cloudsdk/events/server';
-import '@sitecore-cloudsdk/search/server';
+// import '@sitecore-cloudsdk/events/server';
+// import '@sitecore-cloudsdk/search/server';
 import config from 'temp/config';
 class SearchInitPlugin implements MiddlewarePlugin {
   order = 2;
