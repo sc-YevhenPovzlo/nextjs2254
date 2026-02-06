@@ -1,21 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MiddlewarePlugin } from '..';
-import { CloudSDK } from '@sitecore-cloudsdk/core/server';
+//import { CloudSDK } from '@sitecore-cloudsdk/core/server';
 // import '@sitecore-cloudsdk/events/server';
 // import '@sitecore-cloudsdk/search/server';
-import config from 'temp/config';
+//import config from 'temp/config';
 class SearchInitPlugin implements MiddlewarePlugin {
   order = 2;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     const response = res || NextResponse.next();
-    const language = req.nextUrl.locale;
-    await CloudSDK(req, response, {
-      sitecoreEdgeContextId: config.sitecoreEdgeContextId,
-      siteName: config.sitecoreSiteName,
-      enableServerCookie: false,
-      sitecoreEdgeUrl: config.sitecoreEdgeUrl,
-    });
+    // const language = req.nextUrl.locale;
+    // await CloudSDK(req, response, {
+    //   sitecoreEdgeContextId: config.sitecoreEdgeContextId,
+    //   siteName: config.sitecoreSiteName,
+    //   enableServerCookie: false,
+    //   sitecoreEdgeUrl: config.sitecoreEdgeUrl,
+    // });
     //.addEvents() // Initialize the search package
     //.addSearch()
     //   .initialize(); // Run the initialization logic and set cookies
