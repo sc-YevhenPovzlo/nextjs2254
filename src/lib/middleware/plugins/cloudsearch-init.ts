@@ -30,4 +30,4 @@ class CloudSearchInitPlugin implements MiddlewarePlugin {
   }
 }
 
-export const cloudSearchInitPlugin = new CloudSearchInitPlugin();
+export const cloudsearchInitPlugin = new CloudSearchInitPlugin();
