@@ -59,6 +59,11 @@ const nextConfig = {
   async rewrites() {
     // When in connected mode we want to proxy Sitecore paths off to Sitecore
     return [
+      // rss feed route
+      {
+        source: '/testz',
+        destination: '/api/healthz',
+      },
       // API endpoints
       {
         source: '/sitecore/api/:path*',
