@@ -7,8 +7,8 @@ import config from 'temp/config';
 class SearchInitPlugin implements MiddlewarePlugin {
   order = 2;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async exec(req: NextRequest, _res?: NextResponse): Promise<NextResponse> {
-    const response = NextResponse.next();
+  async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
+    const response = res || NextResponse.next();
     const language = req.nextUrl.locale;
     await CloudSDK(req, response, {
       sitecoreEdgeContextId: config.sitecoreEdgeContextId,
