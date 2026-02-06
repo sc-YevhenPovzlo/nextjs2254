@@ -29,4 +29,3 @@ class SearchInitPlugin implements MiddlewarePlugin {
 }
 
 export const searchInitPlugin = new SearchInitPlugin();
-
