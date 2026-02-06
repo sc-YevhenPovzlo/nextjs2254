@@ -8,7 +8,7 @@ const rssFeedPlugin = (nextConfig = {}) => {
         ...(await nextConfig.rewrites()),
         // rss feed route
         {
-          source: '/mysearch/getsearchrssfeed',
+          source: '/test',
           destination: '/api/healthz',
         },
       ];
